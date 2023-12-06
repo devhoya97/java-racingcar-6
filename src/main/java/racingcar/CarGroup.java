@@ -1,5 +1,6 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CarGroup {
@@ -21,7 +22,15 @@ public class CarGroup {
     }
 
     public List<Integer> getMoveCounts() {
-        return null;
+        List<Integer> moveCounts = new ArrayList<>();
+
+        for (Car car : cars) {
+            int moveCount = car.getMoveCount();
+
+            moveCounts.add(moveCount);
+        }
+
+        return moveCounts;
     }
 
     public List<Car> findCarsByMoveCount(int moveCount) {
