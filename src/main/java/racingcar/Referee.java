@@ -1,14 +1,18 @@
 package racingcar;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Referee {
 
     public static List<Car> findWinners(CarGroup carGroup) {
+        int maxMoveCount = findMaxMoveCount(carGroup);
         return null;
     }
 
     private static int findMaxMoveCount(CarGroup carGroup) {
-        return 0;
+        List<Integer> moveCounts = carGroup.getMoveCounts();
+
+        return Collections.max(moveCounts);
     }
 }
