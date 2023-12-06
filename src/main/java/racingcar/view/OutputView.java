@@ -32,13 +32,13 @@ public class OutputView {
     }
 
     public static void printWinner(List<Car> winners) {
-        StringJoiner winnerJoiner = new StringJoiner(WINNER_DELIMITER);
-
-        winners.stream()
+        List<String> winnerNames = winners.stream()
                 .map(Car::getName)
-                .forEach(winnerJoiner::add);
+                .toList();
 
-        System.out.println("최종 우승자" + PRINTING_DELIMITER + winnerJoiner);
+        String combinedWinnerNames = String.join(WINNER_DELIMITER, winnerNames);
+
+        System.out.println("최종 우승자" + PRINTING_DELIMITER + combinedWinnerNames);
     }
 
 }
