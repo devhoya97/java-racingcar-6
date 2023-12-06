@@ -44,4 +44,8 @@ public class CarGroup {
 
         return thisMoveCountCars;
     }
+
+    public List<Car> getCars() {
+        return cars;
+    }
 }

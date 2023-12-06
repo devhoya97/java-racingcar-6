@@ -1,21 +1,18 @@
 package racingcar;
 
 import java.util.List;
+import racingcar.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
         CarGroup carGroup = new CarGroup(List.of("pobi", "jun"));
         carGroup.move(new RandomNumberGenerator());
-        carGroup.move(new RandomNumberGenerator());
-        carGroup.move(new RandomNumberGenerator());
+        OutputView.printProgress(carGroup.getCars());
 
-        List<Car> winners = Referee.findWinners(carGroup);
-        winners.stream()
-                .map(Car::getName)
-                .forEach(System.out::println);
+        carGroup.move(new RandomNumberGenerator());
+        OutputView.printProgress(carGroup.getCars());
 
-        winners.stream()
-                .map(Car::getMoveCount)
-                .forEach(System.out::println);
+        carGroup.move(new RandomNumberGenerator());
+        OutputView.printProgress(carGroup.getCars());
     }
 }
