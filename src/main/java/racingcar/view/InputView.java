@@ -31,10 +31,27 @@ public class InputView {
     }
 
     public static int getTryCount() {
-        return 0;
+        System.out.println("시도할 회수는 몇회인가요?");
+
+        String input = Console.readLine();
+        Integer tryCount = customParseInt(input);
+
+        validateNaturalNumber(tryCount);
+
+        return tryCount;
     }
 
     private static Integer customParseInt(String input) {
-        return 0;
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException numberFormatException) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validateNaturalNumber(int number) {
+        if (number <= 0) {
+            throw new IllegalArgumentException();
+        }
     }
 }
