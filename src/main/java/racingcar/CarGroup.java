@@ -4,12 +4,20 @@ import java.util.List;
 
 public class CarGroup {
 
-    public CarGroup(List<String> carNames) {
+    private final List<Car> cars;
 
+    public CarGroup(List<String> carNames) {
+        cars = carNames.stream()
+                .map(Car::new)
+                .toList();
     }
 
-    public void move() {
+    public void move(RandomNumberGenerator randomNumberGenerator) {
+        for (Car car : cars) {
+            int randomNumber = randomNumberGenerator.create();
 
+            car.move(randomNumber);
+        }
     }
 
     public List<Integer> getMoveCounts() {
