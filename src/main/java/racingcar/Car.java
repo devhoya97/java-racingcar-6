@@ -26,7 +26,7 @@ public class Car {
     }
 
     public boolean isEqualMoveCount(int moveCount) {
-        return false;
+        return this.moveCount == moveCount;
     }
 
     public String getName() {
