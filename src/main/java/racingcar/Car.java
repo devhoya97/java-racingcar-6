@@ -34,7 +34,7 @@ public class Car {
     }
 
     public int getMoveCount() {
-        return 0;
+        return moveCount;
     }
 
 }

@@ -7,7 +7,8 @@ public class Referee {
 
     public static List<Car> findWinners(CarGroup carGroup) {
         int maxMoveCount = findMaxMoveCount(carGroup);
-        return null;
+
+        return carGroup.findCarsByMoveCount(maxMoveCount);
     }
 
     private static int findMaxMoveCount(CarGroup carGroup) {
