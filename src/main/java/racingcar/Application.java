@@ -14,5 +14,7 @@ public class Application {
 
         carGroup.move(new RandomNumberGenerator());
         OutputView.printProgress(carGroup.getCars());
+
+        OutputView.printWinner(Referee.findWinners(carGroup));
     }
 }
