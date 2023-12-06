@@ -34,6 +34,14 @@ public class CarGroup {
     }
 
     public List<Car> findCarsByMoveCount(int moveCount) {
-        return null;
+        List<Car> thisMoveCountCars = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.isEqualMoveCount(moveCount)) {
+                thisMoveCountCars.add(car);
+            }
+        }
+
+        return thisMoveCountCars;
     }
 }
