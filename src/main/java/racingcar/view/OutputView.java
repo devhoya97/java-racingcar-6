@@ -8,7 +8,9 @@ public class OutputView {
     private static final String MOVE_EXPRESSION = "-";
     private static final String NEW_LINE = "\n";
 
-
+    public static void printMessageBeforeProgress() {
+        System.out.println(NEW_LINE + "실행 결과");
+    }
 
     public static void printProgress(List<Car> cars) {
         StringBuilder message = new StringBuilder();
@@ -25,4 +27,6 @@ public class OutputView {
 
         System.out.println(message);
     }
+
+
 }
